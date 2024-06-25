@@ -24,7 +24,7 @@ python tools/boostdep/depinst/depinst.py -I example $LIBRARY
 ./bootstrap.sh
 ./b2 -d0 headers
 
-sudo mount -o remount rw /proc/sys
+# sudo mount -o remount rw /proc/sys
 echo 0 | sudo tee /proc/sys/kernel/randomize_va_space
 
 echo "using $TOOLSET : : $COMPILER ;" > ~/user-config.jam
