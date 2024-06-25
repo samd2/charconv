@@ -16,7 +16,6 @@ local linux_pipeline(name, image, environment, packages = "", sources = [], arch
 {
     name: name,
     kind: "pipeline",
-    privileged: true,
     type: "docker",
     trigger: triggers,
     platform:
@@ -29,6 +28,7 @@ local linux_pipeline(name, image, environment, packages = "", sources = [], arch
         {
             name: "everything",
             image: image,
+            privileged: true,
             environment: environment,
             commands:
             [
